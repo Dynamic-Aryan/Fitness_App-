@@ -1,0 +1,49 @@
+nav{
+
+    background-color: #1a1a1a;
+    height: 9%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 50px 0 50px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    gap: 50px;
+}
+
+nav img{
+    height: 100px;
+    width: auto;
+}
+
+nav a{
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+}
+nav a:hover{
+    color: aquamarine;
+}
+
+nav button{
+    /* height: 50px;
+    width: 110px; */
+    font-size: 1rem;
+    background-color: aquamarine;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: rgb(28, 17, 17);
+    transition: 0.3s ease-in-out;
+    padding: 10px;
+}
+ 

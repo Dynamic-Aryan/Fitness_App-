@@ -1,0 +1,76 @@
+.workout{
+    font-family:'Times New Roman', Times, serif;
+    /* margin: 20px;
+    padding: 20px; */
+    border: 1px solid #ddd;
+    
+    background-color: #737373;
+    text-align: center;
+}
+
+.w_exes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+}
+.w_exe{
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.w_exe--reverse{
+    flex-direction: row-reverse;
+}
+
+.w_exe_image img{
+    border-radius: 40px;
+    max-width: 100%;
+    height: auto;
+    min-width: 300px;
+}
+.w_exe_content{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 10px;
+    margin-left: 20px;
+}
+.w_exe--reverse .w_exe_content{
+    text-align: right;
+    align-items: flex-end;
+}
+.w_exe_content h2{
+    font-size: 50px;
+    font-weight: 900;
+    -webkit-text-stroke: 1px #333;
+    color: transparent;
+}
+.w_exe_content span{
+    font-size: 20px;
+    font-weight: 300;
+    color: #0d0b0b;
+    background-color: aquamarine;
+    padding: 5px 20px;
+    border-radius: 35px;
+    width: fit-content;
+}
+.w_exe_content p{
+    font-size: 20px;
+    font-weight: 300;
+    color: aquamarine;
+}
+
+.w_exes h3{
+    -webkit-text-stroke: 1px aquamarine;
+    color: transparent;
+    font-size: 10rem;
+    font-weight: 900;
+    align-items: center;
+    border: 2px solid aquamarine;
+    width: 15rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
