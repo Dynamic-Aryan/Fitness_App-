@@ -1,7 +1,13 @@
 Link for backend (https://github.com/Dynamic-Aryan/Fitness_fanatic_backend)
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Getting Started(Preview here)
+![Screenshot 2025-01-14 110357](https://github.com/user-attachments/assets/64f94c4a-b195-450b-acc8-bfda56e2e53c)
+![Screenshot 2025-01-14 110351](https://github.com/user-attachments/assets/9ea58caa-746b-4414-8fc0-827c7c0e7cd7)
+![Screenshot 2025-01-14 110342](https://github.com/user-attachments/assets/2bf8ddfe-2ae2-4b2f-a614-340a022c1ea7)
+![Screenshot 2025-01-14 110214](https://github.com/user-attachments/assets/5919869d-4ebb-454c-a68c-bc07a4c3ec0d)
+
+
 
 First, run the development server:
 
