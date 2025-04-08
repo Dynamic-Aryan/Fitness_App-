@@ -4,17 +4,26 @@ import './Banner2.css'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/effect-coverflow';
+
 // import 'swiper/css/navigation';
 // import './styles.css'
-import { EffectCoverflow, Pagination,Autoplay,Navigation} from 'swiper/modules'
-const Banner2 = () => {
-  const progressCircle = useRef(null);
-  const progressContent = useRef(null);
-  const onAutoplayTimeLeft = (s, time, progress) => {
-    progressCircle.current.style.setProperty('--progress', 1 - progress);
-    progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+import  { EffectCoverflow, Pagination, Autoplay, Navigation } from 'swiper/modules';
+
+
+const Banner2: React.FC  = () => {
+  const progressCircle = useRef<SVGSVGElement | null>(null);
+  const progressContent = useRef<HTMLSpanElement | null>(null);
+  const [workouts, setWorkouts] = React.useState<any[] | null>(null);
+  const onAutoplayTimeLeft = (swiper: Swiper, timeLeft: number, percentage: number) => {
+    if (progressCircle.current) {
+      progressCircle.current.style.setProperty('--progress', (1 - percentage).toString());
+    }
+    if (progressContent.current) {
+      progressContent.current.textContent = `${Math.ceil(timeLeft / 1000)}s`;
+    }
   };
-   const [workouts,setWorkouts]=React.useState<any[] | null>(null)
+
+  
    const getworkouts=async ()=>{
     let data: any=[
       {
@@ -75,12 +84,9 @@ const Banner2 = () => {
 
   return (
     <div>
-
-      <h1 className='main'>Drill</h1>
+         <h1 className='main'>Drill</h1>
       <Swiper
-       
         effect={'coverflow'}
-        // grabCursor={true}
         centeredSlides={true}
         autoplay={{
           delay: 2000,
@@ -96,39 +102,34 @@ const Banner2 = () => {
         }}
         pagination={true}
         navigation={true}
-        modules={[EffectCoverflow, Pagination,Autoplay,Navigation]}
+        modules={[EffectCoverflow, Pagination, Autoplay, Navigation]}
         onAutoplayTimeLeft={onAutoplayTimeLeft}
         className="mySwiper"
-        
       >
-        {
-          workouts && workouts.map((item, index) => {
-            return (
-              <SwiperSlide key={index} >
-                <div className='swiper-slide'
-                  style={{
-                    backgroundImage: `url(${item.imageUrl})`,
-                  }}
-                  onClick={() => {
-                    window.location.href = `/workout/${item.type}`
-                  }}
-                >
-                  <div className='swiper-slide-content'>
-                    <h2>{item.type}</h2>
-                    <p>{item.durationInMin} min</p>
-                  </div>
-                </div>
-              </SwiperSlide>
-            )
-          })
-        }
-      <div className="autoplay-progress" slot="container-end">
+        {workouts && workouts.map((item, index) => (
+          <SwiperSlide key={index}>
+            <div
+              className='swiper-slide'
+              style={{ backgroundImage: `url(${item.imageUrl})` }}
+              onClick={() => {
+                window.location.href = `/workout/${item.type}`;
+              }}
+            >
+              <div className='swiper-slide-content'>
+                <h2>{item.type}</h2>
+                <p>{item.durationInMin} min</p>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+        <div className="autoplay-progress" slot="container-end">
           <svg viewBox="0 0 48 48" ref={progressCircle}>
             <circle cx="24" cy="24" r="20"></circle>
           </svg>
           <span ref={progressContent}></span>
         </div>
       </Swiper>
+   
     </div>
   )
 }
