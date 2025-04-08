@@ -1,20 +1,20 @@
-import React, { useRef, useState } from 'react'
-import {Swiper,SwiperSlide} from 'swiper/react'
-import './Banner2.css'
-import 'swiper/css'
-import 'swiper/css/pagination'
+import React, { useRef, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import type { Swiper as SwiperType } from 'swiper'; // ✅ fix: import Swiper as a type
+import './Banner2.css';
+import 'swiper/css';
+import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
-
 // import 'swiper/css/navigation';
-// import './styles.css'
-import  { EffectCoverflow, Pagination, Autoplay, Navigation } from 'swiper/modules';
 
+import { EffectCoverflow, Pagination, Autoplay, Navigation } from 'swiper/modules';
 
-const Banner2: React.FC  = () => {
+const Banner2: React.FC = () => {
   const progressCircle = useRef<SVGSVGElement | null>(null);
   const progressContent = useRef<HTMLSpanElement | null>(null);
-  const [workouts, setWorkouts] = React.useState<any[] | null>(null);
-  const onAutoplayTimeLeft = (swiper: Swiper, timeLeft: number, percentage: number) => {
+  const [workouts, setWorkouts] = useState<any[] | null>(null);
+
+  const onAutoplayTimeLeft = (swiper: SwiperType, timeLeft: number, percentage: number) => {
     if (progressCircle.current) {
       progressCircle.current.style.setProperty('--progress', (1 - percentage).toString());
     }
@@ -22,7 +22,6 @@ const Banner2: React.FC  = () => {
       progressContent.current.textContent = `${Math.ceil(timeLeft / 1000)}s`;
     }
   };
-
   
    const getworkouts=async ()=>{
     let data: any=[
