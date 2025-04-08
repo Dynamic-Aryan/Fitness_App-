@@ -1,14 +1,14 @@
 import React from 'react'
 import '../popup.css'
-import { AiOutlineClose } from 'react-icons/ai';
-import { AiFillDelete } from 'react-icons/ai';
+import { AiOutlineClose, AiFillDelete } from 'react-icons/ai';
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 import DatePicker from 'react-horizontal-datepicker'
-import dayjs,{Dayjs} from 'dayjs';
-import { TimeClock} from '@mui/x-date-pickers/TimeClock'
-import { LocalizationProvider, TimeField } from '@mui/x-date-pickers';
-import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs'
+import dayjs, { Dayjs } from 'dayjs'
+import { TimeClock } from '@mui/x-date-pickers/TimeClock'
+import { LocalizationProvider, TimeField } from '@mui/x-date-pickers'
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+
 import { calculateSizeAdjustValues } from 'next/dist/server/font-utils';
 interface CaloriIntakePopupProps{
   setShowCalorieIntakePopup: React.Dispatch<React.SetStateAction<boolean>>;
